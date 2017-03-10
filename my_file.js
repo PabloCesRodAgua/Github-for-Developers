@@ -1,3 +1,1 @@
-alert("Hello World, again!");
-
-alert("Now the file has been edited");
+alert("Hello World, Hello World, Hello World!");
