@@ -1,0 +1,95 @@
+CURSO GIT - INSTRODUCCIÓN
+
+CURSO GIT - PRIMEROS PASOS
+
+configuración de nombre de usuario
+> git config --global user.name "nombre_usuario"
+
+# cambia el correo del dueño de la cuenta de git
+> git config --global user.email "correo@correo.com"
+
+# cambiar colores de la interfáz
+> git config --global color.ui true 
+
+# listado de configuraciones de git
+> git config --global --list
+
+
+CURSO GIT - NUESTRO PRIMER PROYECTO
+
+# marca el inicio de nuestro proyecto, aquí le decimos a Git que comience a monitorear todos los cambios realizados.
+> git init
+
+# muestra el estado de nuestros archivos
+> git status
+
+# con este comando decimos que archivos están listos para realizar un commit
+> git add
+
+# guardamos los cambios con un mensaje para identificarlos.
+> git commit -m "Mensaje significativo para identificar el commit"
+
+# Mostar una lista de todos nuestros commits con su respectiva información
+> git log
+
+# Con este comando, viajamos a través de nuestros commits o ramas.
+> git checkout
+
+# es similar a checkout a diferencia que este elimina los commits 
+> git reset
+
+# git reset más simple y que no toca nuestro "working area" (no se mete con nuestro código) -> MÁS COMUNMENTE USADO
+> git reset --soft 
+
+# git reset borra el "staging area", sin tocar el "working area"
+> git reset --mixed
+
+# git reset borra absolutamente todo lo que hay en el commit -> MÁS COMUNMENTE USADO
+> git reset --hard
+
+# muestra una pequeña documentación sobre git
+> git help
+
+
+4. CURSO GIT - RAMAS Y FUSIONES
+
+HEAD: 
+	COMMIT DONDE NOS ENCONTRAMOS AHORA
+
+RAMAS:
+	ES UNA LÍNEA DE TIEMPO EN NUESTRO PROEYCTO, QUE NOS 
+	SIRVE PARA ARREGLAR ERRORES, EXPERIRMENTAR, HACER GRANDES CAMBIOS ETC
+
+RAMA MASTER:
+	LA RAMA ES DONDE COMENZAMOS A TRABAJAR, ES LA RAMA PRINCIPAL Y ESTABLECE NUESTRO PROYECTO
+
+
+# creación de ramas
+> git branch Rama
+
+# eliminación de todas las ramas
+> git branch -d
+
+FUSIONES:
+	ES LA CREACIÓN DE UN NUEVO COMMIT JUNTANDO UNA RAMA CON OTRA.
+		SE JUNTAN LAS RAMAS CON LA MASTER
+
+	FAST-FORWARD
+		SIMPLE Y AUTOMÁTICO
+		SOLO HACE LA FUSIÓN, ESTO PASA CUANDO NORMALMENTE SE TRABAJA CON ARCHIVOS DIFERENTES O LÍNEAS DE CÓDIGO DISTINTAS
+
+	MANUAL-MERGE
+		LARGO Y MANUAL
+		ANTES DE HACER LA FUSIOÓN TIENE QUE PASAR POR NOSOTROS, NORMMALMENTE OCURRE CUANDO SE TRABAJA EN LOS MISMOS ARCHIVOS O LÍNEAS DE CÓDIGOS
+
+# juntar las ramas
+# primero mos vamos a la rama que va absorver
+	# 1. cambiamos a la rama master
+	> git checkout master 
+
+	# 2. fusionar la rama aborbida
+	> git merge rama_absorbida
+
+
+# nos movemos a la rama y la creamos
+> git checkout -b RamaCreada
